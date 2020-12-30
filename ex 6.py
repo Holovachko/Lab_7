@@ -7,18 +7,9 @@ for m in range(i):
     for m in range(j):
         b.append(int(input('Введіть елементи матриці ')))
     matrix.append(b)
-
-y = 0
-r = 0
-if i != j:
-    for x in matrix:
-        for l in x:
-            if y == l:
-                r = l
-            elif y < l:
-                y = l
-            else:
-                continue
-else:
-    print('Ця матриця не є прямокутною')
-print(r)
+new_list = []
+for i in matrix:
+    new_list.extend(i)
+    
+m = max([el for el in new_list if new_list.count(el)>1])
+print(m)
